@@ -1,7 +1,44 @@
+import Directory from './components/directory/directory.component';
+
 const App = () => {
+  const categories = [
+    {
+      id: 1,
+      title: 'Clothing',
+      imgUrl: 'https://i.ibb.co/sqjJqSB/Clothing.jpg',
+    },
+    {
+      id: 2,
+      title: 'Electronics',
+      imgUrl: 'https://i.ibb.co/MGXpq1w/Electronics.jpg',
+    },
+    {
+      id: 3,
+      title: 'Health and Beauty',
+      imgUrl: 'https://i.ibb.co/bb0tRFW/Beauty.jpg',
+    },
+    {
+      id: 4,
+      title: 'Sports and Outdoor',
+      imgUrl: 'https://i.ibb.co/6JRvxgt/Sports.jpg',
+    },
+    {
+      id: 5,
+      title: 'Toys and Games',
+      imgUrl: 'https://i.ibb.co/7bSFJFB/Toys.jpg',
+    },
+    {
+      id: 6,
+      title: 'Books and More',
+      imgUrl: 'https://i.ibb.co/BnkS5Z3/Books.jpg',
+    },
+  ];
+
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <h1 className="text-3xl font-semibold">HELLO IM REACT!</h1>
+    // Categories Container
+    <div className="w-screen h-screen items-center justify-center flex">
+      {/* Category Container */}
+      <Directory categories={categories}/>
     </div>
   );
 };

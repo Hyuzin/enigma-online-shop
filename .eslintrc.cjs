@@ -5,7 +5,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "plugin:tailwindcss/recommended",
   ],
   parserOptions: {
     ecmaVersion: "latest",
@@ -13,8 +12,9 @@ module.exports = {
     ecmaFeatures: { jsx: true },
   },
   settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh", "tailwindcss"],
+  plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": "warn",
+    "react/prop-types": "off"
   },
 };
