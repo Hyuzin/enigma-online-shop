@@ -1,4 +1,4 @@
-import { Directory } from "../../../components";
+import { Categories } from "../../../components";
 
 const Home = () => {
   const categories = [
@@ -37,7 +37,7 @@ const Home = () => {
     // Categories Container
     <div className="h-screen items-center justify-center flex">
       {/* Category Container */}
-      <Directory categories={categories} />
+      <Categories categories={categories} />
     </div>
   );
 };

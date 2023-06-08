@@ -1,6 +1,6 @@
 import Home from "./pages/home/home.page";
 import Layout from "./pages/layout.page";
 import Shop from "./pages/shop/shop.page";
-import SignIn from "./pages/sign-in/sign-in.page";
+import Auth from "./pages/auth/auth.page";
 
-export {Home, Layout, Shop, SignIn};
+export {Home, Layout, Shop, Auth};
