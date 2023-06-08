@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { loginInput } from '../../constants/formAuthInput';
 import FormInput from '../formInput/formInput.component';
-import {Button} from '../'
+import { Button } from '../';
+import {
+  createUserDocumentFromAuth,
+  signInAuthUserWithEmailAndPassword,
+  signInWithGooglePopup,
+} from '../../utils/firebase/firebase.util';
 
 const defaultFormFields = {
   email: '',
@@ -9,11 +14,37 @@ const defaultFormFields = {
 };
 const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
 
-  console.log(formFields)
+  console.log(formFields);
 
-  const handleSubmit = () => {
-    console.log('login');
+  const resetFormField = () => {
+    setFormFields(defaultFormFields);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await signInAuthUserWithEmailAndPassword(email, password);
+      console.log(response);
+      resetFormField();
+    } catch (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+          alert('incorrect password for email');
+          break;
+        case 'auth/user-not-found':
+          alert('user not found!');
+          break;
+        default:
+          console.log(error.message);
+      }
+    }
+  };
+
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
   };
 
   const handleChange = (e) => {
@@ -23,7 +54,7 @@ const SignIn = () => {
 
   return (
     <div className="flex flex-col shadow-lg w-[50%] rounded-xl p-10 gap-5 ">
-      <h1 className="text-center text-xl font-semibold">Login</h1>
+      <h1 className="font-semibold text-center text-xl">Login</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-10">
         {loginInput.map(({ id, type, name, placeHolder }) => {
           return (
@@ -37,9 +68,13 @@ const SignIn = () => {
             />
           );
         })}
-        <div className='flex flex-row gap-3'>
-          <Button variant={'normal'}>Login</Button>
-          <Button variant={'google'}>Login with Google</Button>
+        <div className="flex flex-row gap-3">
+          <Button variant={'normal'} type="submit">
+            Login
+          </Button>
+          <Button type="button" variant={'google'} onClick={signInWithGoogle}>
+            Login with Google
+          </Button>
         </div>
       </form>
     </div>

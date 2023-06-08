@@ -3,9 +3,9 @@ const buttonVariantsStyling = {
   normal:
     'bg-black text-white py-3 rounded w-full border border-black hover:bg-white hover:text-black transition-colors ',
 };
-const Button = ({ children, variant, className }) => {
+const Button = ({ children, variant, className, ...props }) => {
   return (
-    <button className={`${buttonVariantsStyling[variant]} ${className} font-medium`}>
+    <button className={`${buttonVariantsStyling[variant]} ${className} font-medium`} {...props} >
       {children}
     </button>
   );
