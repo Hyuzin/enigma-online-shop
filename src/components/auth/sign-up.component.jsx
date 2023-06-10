@@ -4,7 +4,7 @@ import {
   createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase.util';
 import FormInput from '../formInput/formInput.component';
-import { registerInput } from '../../constants/formAuthInput';
+import { registerInput } from '../../constants/forms-auth-input';
 import {Button} from '../'
 
 const defaultFormFields = {
@@ -32,6 +32,7 @@ const SignUp = () => {
       await createUserDocumentFromAuth(user, { displayName });
       setFormFields(defaultFormFields);
       resetFormField();
+      alert('User has been created!')
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('Cannot create user, email already in use');

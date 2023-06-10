@@ -2,7 +2,7 @@ import { SignIn, SignUp } from '../../../components';
 
 const Auth = () => {
   return (
-    <div className="pt-16 flex max-w-6xl mx-auto gap-5 h-screen items-center">
+    <div className="flex gap-5 items-center h-screen mx-auto w-full max-w-5xl">
       <SignIn />
       <SignUp />
     </div>

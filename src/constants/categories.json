@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Televisions and Home Theater",
+    "imgUrl": "https://polytron.co.id/wp-content/uploads/2021/02/polytron-skytower-surround.png"
+  },
+  {
+    "id": 2,
+    "title": "Computers and Accesories",
+    "imgUrl": "https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/gaming.png"
+  },
+  {
+    "id": 3,
+    "title": "Mobile Devices",
+    "imgUrl": "https://m-cdn.phonearena.com/images/article/64576-wide-two_1200/The-Best-Phones-to-buy-in-2023---our-top-10-list.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Audio Equipment",
+    "imgUrl": "https://aztecsound.com/wp-content/uploads/2020/04/different-types-of-audio-visual-equipment.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Cameras and Photography",
+    "imgUrl": "https://asset.fujifilm.com/www/id/files/2019-09/da2d925d3f3cbf2da26bfcd8baf8f200/hero_digitalcameras_01_sp.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Gaming",
+    "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/gh-index-gamingconsoles-052-print-preview-1659705142.jpg"
+  }
+]

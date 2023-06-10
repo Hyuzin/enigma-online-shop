@@ -4,5 +4,6 @@ import Navbar from "./navbar/navbar.component";
 import SignIn from './auth/sign-in.component'
 import SignUp from './auth/sign-up.component'
 import Button from "./button/button.component";
+import CartIcon from "./cart-icon/cart-icon.component";
 
-export {Category, Categories, Navbar, SignIn, SignUp, Button}
+export {Category, Categories, Navbar, SignIn, SignUp, Button, CartIcon};
