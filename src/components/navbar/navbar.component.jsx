@@ -2,8 +2,9 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase/firebase.util';
-import { Button, CartIcon } from '../';
+import { CartIcon } from '../';
 import { CartContext } from '../../contexts/cart.context';
+import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 const Navbar = () => {
   const { currentUser } = useContext(UserContext);
@@ -17,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full">
+    <div className="fixed w-full bg-white">
       <div className="relative flex justify-between items-center max-w-5xl mx-auto py-5">
         <Link to="/">
           <p className="font-bold text-2xl">ENIGMA</p>
@@ -43,14 +44,7 @@ const Navbar = () => {
           )}
           <CartIcon />
         </div>
-        {isCartOpen && (
-          <div className="absolute right-0 top-[70px] w-[250px] bg-white shadow-lg p-2 rounded h-[340px] flex flex-col justify-between text-center">
-            <div>Product Item</div>
-            <Button variant={'normal'} className="">
-              CHECKOUT
-            </Button>
-          </div>
-        )}
+        {isCartOpen &&  <CartDropdown />}
       </div>
     </div>
   );
