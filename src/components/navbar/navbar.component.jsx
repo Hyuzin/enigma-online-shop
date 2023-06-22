@@ -11,15 +11,13 @@ const Navbar = () => {
 
   const { isCartOpen } = useContext(CartContext);
 
-  console.log(isCartOpen);
-
   const signOutHandler = async () => {
     await signOutUser();
   };
 
   return (
-    <div className="fixed w-full bg-white">
-      <div className="relative flex justify-between items-center max-w-5xl mx-auto py-5">
+    <div className="fixed w-full bg-white px-2">
+      <div className="relative flex justify-between items-center max-w-7xl mx-auto py-5">
         <Link to="/">
           <p className="font-bold text-2xl">ENIGMA</p>
         </Link>
@@ -31,20 +29,22 @@ const Navbar = () => {
             SHOP
           </Link>
           {currentUser ? (
-            <button
-              onClick={signOutHandler}
-              className="hover:text-gray-500 transition-colors"
-            >
-              SIGN OUT
-            </button>
+            <>
+              <button
+                onClick={signOutHandler}
+                className="hover:text-gray-500 transition-colors"
+              >
+                SIGN OUT
+              </button>
+              <CartIcon />
+            </>
           ) : (
             <Link to="/auth" className="hover:text-gray-500 transition-colors">
               SIGN IN
             </Link>
           )}
-          <CartIcon />
         </div>
-        {isCartOpen &&  <CartDropdown />}
+        {isCartOpen && <CartDropdown />}
       </div>
     </div>
   );
